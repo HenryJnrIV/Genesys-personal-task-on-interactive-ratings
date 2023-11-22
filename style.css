@@ -1,0 +1,230 @@
+/* WEB FONTS*/
+
+@font-face {
+  font-family: Overpass;
+  src: url(./fonts/Overpass-Regular.ttf);
+}
+
+@font-face {
+  font-family: Overpass;
+  src: url(./fonts/Overpass-Bold.ttf);
+}
+
+/*VARIABLES*/
+
+:root {
+  --orange: hsl(25, 97%, 53%);
+  --white: hsl(0, 0%, 100%);
+  --light-grey: hsl(217, 12%, 63%);
+  --medium-grey: hsl(216, 12%, 54%);
+  --dark-blue: hsl(213, 19%, 18%);
+  --very-dark-blue: hsl(216, 12%, 8%);
+  --gradient: linear-gradient(
+    to bottom,
+    hsl(215, 20%, 17%),
+    hsl(215, 24%, 12%)
+  );
+}
+
+/*RESET*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+p {
+  margin: unset;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  /*min-height: 100vh;*/
+  text-rendering: optimizeSpeed;
+  display: grid;
+  place-items: center;
+  min-block-size: 100vh;
+  background-color: var(--very-dark-blue);
+  /*line-height: 1.5;*/
+  font: 15px/1.6 Overpass, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button {
+  font: inherit;
+}
+
+@media (prefers-reduced-notion) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*CLASSES*/
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/*TYPOGRAPHY*/
+h1 {
+  color: var(--white);
+  font-size: 28px;
+  line-height: 1.25;
+  margin-bottom: 0.4375rem;
+}
+
+p {
+  color: var(--light-grey);
+}
+
+/*LAYOUT*/
+
+main {
+  /*background-color: var(--gradient);*/
+  background-color:hsl(215, 24%, 12%);
+  max-width: 27.25rem;
+  width: 100%;
+  border-radius: 1.875rem;
+  padding: 2rem;
+}
+
+.logo {
+  --size: 3rem;
+
+  background-color: var(--dark-blue);
+  width: var(--size);
+  height: var(--size);
+  padding: 1rem;
+  border-radius: var(--size);
+  margin-bottom: 1.875rem;
+}
+
+/* FORM ELEMENT*/
+
+.button {
+  background-color: var(--orange);
+  border: unset;
+  color: var(--white);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  height: 45px;
+  border-radius: 45px;
+  margin-top: 15px;
+  width: 100%;
+  cursor: pointer;
+  appearance: none;
+  transition: background-color 0.15s linear, color 0.15s linear;
+}
+
+.button:is(:hover, :focus-visible){
+  background-color: var(--white);
+  color: var(--orange);
+  outline: none;
+}
+
+.rating-group {
+  display: flex;
+  justify-content: space-between;
+  margin-block: 1.5rem 2rem;
+}
+
+.radio-input .control {
+  display: block;
+  background-color: var(--dark-blue);
+  color: var(--light-grey);
+  width: 51px;
+  height: 51px;
+  border-radius: 51px;
+  text-align: center;
+  line-height: 51px;
+  cursor: pointer;
+  font-size: 16x;
+  font-weight: 700;
+  transition: background-color 0.15s linear, color 0.15s linear;
+}
+
+.radio-input input:checked + .control {
+  background-color: var(--light-grey);
+  color: var(--white);
+}
+.radio-input:hover .control,
+.radio-input input:focus + .control {
+  background-color: var(--orange);
+  color: var(--white);
+
+}
+
+/*RATING RESULT*/
+.rating-result {
+  height: 2rem;
+  background-color: var(--dark-blue);
+  color: var(--orange);
+  border-radius: 2rem;
+  line-height: 2rem;
+  width: max-content;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+  margin-block: 2rem;
+}
+
+.illustration{
+  margin-inline: auto;
+}
+
+/*:target {
+  scroll-margin-block: 5ex;
+}*/
